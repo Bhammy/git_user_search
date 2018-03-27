@@ -6,12 +6,16 @@ const UserBadge = (props) => {
   const { searchedUser } = props;
   let displayedComponent;
   if (searchedUser === '') {
-    displayedComponent = 'No user found.';
+// default display
+    displayedComponent = <p className="user">No user found.</p>
   } else {
+// when state has user
     displayedComponent = (
       <div>
         <section className="user">
-          <section className="user_details_photo"><img src={ searchedUser.avatar_url } alt="user_profile" /></section>
+          <section className="user_details_photo">
+            <img src={ searchedUser.avatar_url } alt="user_profile"               />
+          </section>
           <section className="user_details">
             <h3>{ searchedUser.login }</h3>
             <hr />

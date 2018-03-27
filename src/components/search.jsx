@@ -1,5 +1,6 @@
 import React from 'react';
 import requestUserData from '../actions/actions';
+import './search.css';
 
 class Search extends React.Component {
   constructor(props) {
@@ -14,14 +15,18 @@ class Search extends React.Component {
   async searchUser(e) {
     e.preventDefault();
     let searchedUser = await requestUserData(this.state.search);
-    searchedUser = (searchedUser === false) ? '' : searchedUser;
+
+    // if no user found, set searchedUser to default 'no user'
+		searchedUser = (searchedUser === false) ? '' : searchedUser;
     this.props.setUser(searchedUser);
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit={ (e) => this.searchUser(e) }>
+      <div className="search_container">
+        <form onSubmit={ (e) => this.searchUser(e) }
+          className="search_container_form"
+        >
           <input onChange={ e => this.handleChange(e) } />
         </form>
       </div>
