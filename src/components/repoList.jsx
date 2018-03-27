@@ -1,4 +1,5 @@
 import React from 'react';
+import './repoList.css';
 
 const RepoList = ({ repo }) => {
   const {
@@ -8,16 +9,16 @@ const RepoList = ({ repo }) => {
     stargazers_count,
     forks_count,
     open_issues_count,
-    size
+    size,
   } = repo;
 
   return(
-    <div className="repo_card">
+    <div className="repo_card" >
       <h3>{ name }</h3>
-      <hr />
+      <br />
       <p>{ description }</p>
       <a href={git_url}>Repo Link</a>
-      <div>
+      <div className="repo_card_details">
         <section>
           <p>Stars: { stargazers_count }</p>
           <p>Forks: { forks_count }</p>

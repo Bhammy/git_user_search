@@ -10,16 +10,18 @@ const UserBadge = (props) => {
   } else {
     displayedComponent = (
       <div>
-        <section><img src={ searchedUser.avatar_url } alt="user_profile" /></section>
-        <section>
-          <h3>{ searchedUser.login }</h3>
-          <hr />
-          <p>Followers: { searchedUser.followers }</p>
-          <p>Following: { searchedUser.following }</p>
+        <section className="user">
+          <section className="user_details_photo"><img src={ searchedUser.avatar_url } alt="user_profile" /></section>
+          <section className="user_details">
+            <h3>{ searchedUser.login }</h3>
+            <hr />
+            <p>Followers: { searchedUser.followers }</p>
+            <p>Following: { searchedUser.following }</p>
+          </section>
         </section>
-        <section>
+        <section className="repo_cards">
           { searchedUser.repoData.map( (repo) => {
-              return <RepoList repo={ repo } />;
+              return <RepoList repo={ repo } key={ repo.id }/>;
             })
           }
         </section>

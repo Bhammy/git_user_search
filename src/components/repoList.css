@@ -1,0 +1,18 @@
+.repo_card {
+  width: 250px;
+  display: flex;
+  border: 1px solid black;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin: 5px;
+}
+
+.repo_card h3, a, p {
+  width: 100%;
+}
+
+.repo_card_details {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}

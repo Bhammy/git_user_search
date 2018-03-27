@@ -3,3 +3,24 @@ img {
   width: auto;
   border-radius: 100px;
 }
+
+.user {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.user_details {
+  margin-left: 10px;
+}
+
+.user_details_photo {
+  display: flex;
+  align-items: center;
+}
+
+.repo_cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
