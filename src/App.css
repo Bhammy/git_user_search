@@ -5,6 +5,8 @@ body {
 }
 
 .app-header {
+  display: flex;
+  align-items: center;
   background-color: #FF611A;
   height: 100px;
   margin: 0;

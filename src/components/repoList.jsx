@@ -14,7 +14,9 @@ const RepoList = ({ repo }) => {
 
   return(
     <div className="repo_card" >
-      <h3>{ name }</h3>
+      <div className="repo_card_header">
+        <h3>{ name }</h3>
+      </div>
       <br />
       <p>{ description }</p>
       <a href={git_url}>Repo Link</a>
