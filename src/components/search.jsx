@@ -4,7 +4,7 @@ import requestUserData from '../actions/actions';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { search: "" };
+    this.state = { search: '' };
   }
 
   handleChange(e) {
@@ -13,7 +13,8 @@ class Search extends React.Component {
 
   async searchUser(e) {
     e.preventDefault();
-    const searchedUser = await requestUserData(this.state.search);
+    let searchedUser = await requestUserData(this.state.search);
+    searchedUser = (searchedUser === false) ? '' : searchedUser;
     this.props.setUser(searchedUser);
   }
 
